@@ -39,4 +39,4 @@ This project is licensed under the [MIT License] (LICENCE). You free to use, mod
 
 ## ⭐ About Me
 
-Hi tthere i'm **Nathan Maulana Achmadi**, i'm a student, aspiring & enthusiast with data engineering and cloud system & architecture
+Hi there i'm **Nathan Maulana Achmadi**, i'm a student, aspiring & enthusiast with data engineering and cloud system & architecture
