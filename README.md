@@ -1,4 +1,4 @@
-#####Data Warehouse and Analytics Project
+##### Data Warehouse and Analytics Project
 
 Welcome to the **Data Warehouse and Analytics Project** repository 🚀
 This project demontrates a comprehensive data warehousing and analytics solution, from building a data warehouse to generating actionable insights. Designed as a portofolio projects, highlights industry best practice in data engineering and analytics.
@@ -56,7 +56,7 @@ These insight empower stackholder with key business metrics, enabling strategic 
 
 The data architecture for this project follows Medallion Architecture **Bronze**, **Silver**, and **Gold** layers:
 
-![Data Architecture Diagram](docs/data_architecture.drawio)
+![Data Architecture Diagram](docs/data_architecture.png)
 
 1. **Bronze Layer**: Stores raw data as-is from the source systems. Data is ingested from CSV Files into SQL Server Database.
 2. **Silver Layer**: This layer includes data cleansing, standardization, and normalization processes to prepare data for analysis.
