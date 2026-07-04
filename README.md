@@ -1,115 +1,41 @@
-# Data Warehouse and Analytics Project
+# Data Warehouse & Analytics — Portfolio Project
 
-Welcome to the **Data Warehouse and Analytics Project** repository 🚀  
-This project demontrates a comprehensive data warehousing and analytics solution, from building a data warehouse to generating actionable insights. Designed as a portofolio projects, highlights industry best practice in data engineering and analytics.
+A personal data engineering portfolio project, evolving from a single SQL Server implementation into a multi-stack showcase of the same Medallion Architecture (Bronze → Silver → Gold) data warehouse, rebuilt using different tools as I learn them.
 
----
-
-## 📋 Project Overview
-
-This project involves:
-
-1. **Data Architecture**: Designing a Modern Data Warehouse Using Medallion Architecture **Bronze**, **Silver**, and **Gold** layers.
-2. **ETL Pipelines**: Extracting, transforming, and loading data from source systems into the warehouse.
-3. **Data Modeling**: Developing fact and dimension tables optimized for analytical queries.
-4. **Analytics & Reporting**: Creating SQL-based reports and dashboards for actionable insights.
-
- 🎯 This repository is an excellent resource for professionals and students looking to showcase expertise in:
- - SQL Development
- - Data Architect
- - Data Engineering
- - ETL Pipeline Developer
- - Data Modeling
- - Data Analytics
+The goal isn't to compare tools for their own sake, but to demonstrate the same core data engineering concepts — layered architecture, data cleansing, star schema modeling, testing, and documentation — implemented across different parts of the modern data stack.
 
 ---
 
-## 🚀 Project Requirements
+## Implementations
 
-### Building the Data Warehouse (Data Engineering)
+| Version | Stack | Status | Folder |
+|---|---|---|---|
+| v1 | SQL Server, T-SQL stored procedures | ✅ Complete (legacy) | [`warehouse-sql-server/`](./warehouse-sql-server) |
+| v2 | Python (ingestion) + dbt + PostgreSQL | ✅ Complete (current) | [`warehouse-dbt-postgres/`](./warehouse-dbt-postgres) |
+| v3 | PySpark / Databricks | 🔜 Planned | — |
+| v4 | Apache Airflow (orchestration) | 🔜 Planned | — |
+| v5 | AWS (S3, Glue, Redshift) | 🔜 Planned | — |
 
-#### Objective
-Develop a modern data warehouse using SQL Server to consolidate sales data, enabling analytical reporting and informend decision-making.
-
-#### Spesicications
-- **Data Sources**: Import data from two soure system (ERP and CRM) provided as CSV Files.
-- **Data Quality**: Cleanse and reslove data quality issues prior to analysis.
-- **Integration**: Combine both source into a single, user-friendly data model designed for analytical queries.
-- **Scope**: Focus on the latest dataset only; historization of data is not required.
-- **Documentaion**: Provide clear documentation of the model to support both business stackholder and analytical team.
+Each folder is self-contained with its own README, setup instructions, and documentation.
 
 ---
 
-### BI: Analytics & Reporting (Data Analytics)
+## Why This Structure
 
-### Objective
-Develope SQL-Based analytics to deliver detailed insights into:
-- **Customer behavior**
-- **Product Performance**
-- **Sales Trends**
+Rather than starting a new repository for every new tool learned, this project intentionally keeps every version in one place. It's meant to show a progression, not just a snapshot: the same problem (build a data warehouse from raw CRM/ERP CSVs, model it into a star schema, make it analytics-ready), solved and re-solved as new skills are picked up.
 
-These insight empower stackholder with key business metrics, enabling strategic decision-making.
+## Data Source & Attribution
 
----
+This project uses a sample CRM/ERP dataset originally provided as part of the "SQL Data Warehouse" course by Data With Baraa, used here strictly for personal learning and portfolio purposes. Raw dataset files are not included in this repository (see `.gitignore`) as they are third-party learning material.
 
-## 🏗️ Data Architecture
-
-The data architecture for this project follows Medallion Architecture **Bronze**, **Silver**, and **Gold** layers:
-
-![Data Architecture Diagram](docs/data_architecture.png)
-
-1. **Bronze Layer**: Stores raw data as-is from the source systems. Data is ingested from CSV Files into SQL Server Database.
-2. **Silver Layer**: This layer includes data cleansing, standardization, and normalization processes to prepare data for analysis.
-3. **Gold Layer**: Houses business-ready data modeled into a star schema required for reporting and analytics.
-
-### Layer Details
-
-| Layer | Object Type | Load Method | Transformations | Data Model |
-|-------|-------------|-------------|-----------------|------------|
-| **Bronze** | Tables | Batch Processing, Full Load, Truncate & Insert | No Transformations | None (as-is) |
-| **Silver** | Tables | Batch Processing, Full Load, Truncate & Insert | Data Cleansing, Data Standardization, Data Normalization, Derived Columns, Data Enrichment | None (as-is) |
-| **Gold** | Views | No Load | Data Integrations, Aggregations, Business Logics | Star Schema, Flat Table, Aggregated Table |
-
-### Sources & Consumption
-
-- **Sources**: CRM & ERP (Object Type: CSV Files, Interface: Files in Folders)
-- **Consume**: BI & Reporting, Ad-Hoc SQL Queries, Machine Learning
+All transformation logic, pipeline code, testing, and documentation across every version in this repository are original work.
 
 ---
 
-## 📁 Repository Structure
-```
-data-warehouse-project/
-|
-├── datasets/                    # Raw datasets used for the project (ERP and CRM data)
-|
-├── docs/                        # Project documentation and architecture details
-│   ├── etl.drawio               # Draw.io file shows all different techniques and methods of ETL
-│   ├── data_architecture.drawio # Draw.io file shows the project's architecture
-│   ├── data_catalog.md          # Catalog of datasets, including field descriptions and metadata
-│   ├── data_flow.drawio         # Draw.io file for the data flow diagram
-│   ├── data_models.drawio       # Draw.io file for data models (star schema)
-│   └── naming_conventions.md    # Consistent naming guidelines for tables, columns, and files
-|
-├── scripts/                     # SQL scripts for ETL and transformations
-│   ├── bronze/                  # Scripts for extracting and loading raw data
-│   ├── silver/                  # Scripts for cleaning and transforming data
-│   └── gold/                    # Scripts for creating analytical models
-|
-├── tests/                       # Test scripts and quality files
-|
-├── README.md                    # Project overview and instructions
-├── LICENSE                      # License information for the repository
-├── .gitignore                   # Files and directories to be ignored by Git
-└── requirements.txt             # Dependencies and requirements for the project
-```
+## 🛡️ License
 
----
-
-## 🛡️License
-
-This project is licensed under the [MIT License] (LICENCE). You free to use, modify, and share this project with proper attribution.
+This project is licensed under the [MIT License](LICENSE). You are free to use, modify, and share this project with proper attribution.
 
 ## ⭐ About Me
 
-Hi there i'm **Nathan Maulana Achmadi**, i'm a student, aspiring & enthusiast with data engineering and cloud system & architecture
+Hi, I'm **Nathan Maulana Achmadi** — a student and data engineering enthusiast, currently learning cloud systems and modern data architecture.
