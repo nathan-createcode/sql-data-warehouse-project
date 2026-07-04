@@ -1,0 +1,56 @@
+version: 2
+
+models:
+  - name: silver_crm_cust_info
+    description: "Cleansed customer master data from CRM (deduplicated, most recent record per customer)."
+    columns:
+      - name: cst_id
+        description: "Primary key - unique customer identifier."
+        tests:
+          - unique
+          - not_null
+      - name: cst_marital_status
+        tests:
+          - accepted_values:
+              values: ['Single', 'Married', 'n/a']
+      - name: cst_gndr
+        tests:
+          - accepted_values:
+              values: ['Female', 'Male', 'n/a']
+
+  - name: silver_crm_prd_info
+    description: "Cleansed product master data from CRM."
+    columns:
+      - name: prd_id
+        description: "Primary key - unique product identifier."
+        tests:
+          - unique
+          - not_null
+      - name: prd_cost
+        tests:
+          - not_null
+      - name: prd_line
+        tests:
+          - accepted_values:
+              values: ['Mountain', 'Road', 'Other Sales', 'Touring', 'n/a']
+
+  - name: silver_crm_sales_details
+    description: "Cleansed sales transaction data from CRM."
+    columns:
+      - name: sls_ord_num
+        tests:
+          - not_null
+
+  - name: silver_erp_cust_az12
+    description: "Cleansed customer demographic data from ERP."
+    columns:
+      - name: gen
+        tests:
+          - accepted_values:
+              values: ['Female', 'Male', 'n/a']
+
+  - name: silver_erp_loc_a101
+    description: "Cleansed customer location data from ERP."
+
+  - name: silver_erp_px_cat_g1v2
+    description: "Product category data from ERP."

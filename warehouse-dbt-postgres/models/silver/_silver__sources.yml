@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: bronze
+    description: "Raw data loaded from CSV files via the Python ingestion script (df.to_sql())."
+    schema: bronze
+    tables:
+      - name: crm_cust_info
+        description: "Raw customer data from the CRM system."
+      - name: crm_prd_info
+        description: "Raw product data from the CRM system."
+      - name: crm_sales_details
+        description: "Raw sales transaction data from the CRM system."
+      - name: erp_cust_az12
+        description: "Raw customer demographic data from the ERP system."
+      - name: erp_loc_a101
+        description: "Raw customer location data from the ERP system."
+      - name: erp_px_cat_g1v2
+        description: "Raw product category data from the ERP system."

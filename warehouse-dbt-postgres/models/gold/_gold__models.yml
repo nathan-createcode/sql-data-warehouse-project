@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: gold_dim_customers
+    description: "Customer dimension - one row per customer (Star Schema)."
+    columns:
+      - name: customer_key
+        description: "Surrogate key for the customer dimension."
+        tests:
+          - unique
+          - not_null
+
+  - name: gold_dim_products
+    description: "Product dimension - current products only (Star Schema)."
+    columns:
+      - name: product_key
+        description: "Surrogate key for the product dimension."
+        tests:
+          - unique
+          - not_null
+
+  - name: gold_fact_sales
+    description: "Sales fact table (Star Schema)."
+    columns:
+      - name: customer_key
+        description: "Foreign key to gold_dim_customers."
+        tests:
+          - relationships:
+              to: ref('gold_dim_customers')
+              field: customer_key
+      - name: product_key
+        description: "Foreign key to gold_dim_products."
+        tests:
+          - relationships:
+              to: ref('gold_dim_products')
+              field: product_key
