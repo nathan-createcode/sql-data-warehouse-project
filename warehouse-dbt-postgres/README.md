@@ -2,6 +2,10 @@
 
 Modern data stack implementation of the Medallion Architecture, using Python for ingestion and dbt for transformation.
 
+## Architecture
+
+![Data Architecture](docs/data_architecture.png)
+
 ## Stack
 
 - Python 3.12, Pandas, SQLAlchemy, python-dotenv
